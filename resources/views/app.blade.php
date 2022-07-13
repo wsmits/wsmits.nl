@@ -23,7 +23,7 @@
         @vite('resources/js/app.js')
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="font-sans antialiased">
         @inertia
     </body>
 </html>

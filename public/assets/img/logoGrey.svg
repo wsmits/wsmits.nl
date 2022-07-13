@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 14.603999 12.862"
+   height="12.862mm"
+   width="14.604mm">
+  <defs
+     id="defs2">
+    <filter
+       id="filter1115"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1113"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1119"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1117"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1123"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1121"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1127"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1125"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1131"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1129"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1135"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1133"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1139"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1137"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1143"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1141"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+    <filter
+       id="filter1147"
+       style="color-interpolation-filters:sRGB;">
+      <feColorMatrix
+         id="feColorMatrix1145"
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 " />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-284.138)"
+     id="layer1">
+    <path
+       transform="matrix(0,1,0.49185497,0,-88.214736,256.76395)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581"
+       style="fill:#35c1d5;fill-opacity:1;stroke:#35c1d5;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1115)" />
+    <path
+       transform="matrix(0,-1,0.49185497,0,-90.040166,317.94253)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-3"
+       style="fill:#00abc0;fill-opacity:1;stroke:#00abc0;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1119)" />
+    <path
+       transform="matrix(0,1,-0.49185497,0,102.81908,256.76395)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-2"
+       style="fill:#f9a528;fill-opacity:1;stroke:#f9a528;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1123)" />
+    <path
+       transform="matrix(0,-1,-0.49185497,0,104.64451,317.94253)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-3-1"
+       style="fill:#f68c1e;fill-opacity:1;stroke:#f68c1e;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1127)" />
+    <path
+       transform="matrix(0,-1,-0.49185497,0,108.29209,317.9428)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-3-1-7"
+       style="fill:#81c683;fill-opacity:1;stroke:#81c683;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1131)" />
+    <path
+       transform="matrix(0,1,-0.49185497,0,104.64067,263.1945)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-2-2"
+       style="fill:#ed6d23;fill-opacity:1;stroke:#ed6d23;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1135)" />
+    <path
+       transform="matrix(0,-1,-0.49185497,0,106.4661,324.37308)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-3-1-73"
+       style="fill:#307e3e;fill-opacity:1;stroke:#307e3e;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1139)" />
+    <path
+       transform="matrix(0,1,-0.49185497,0,108.29186,263.1945)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-2-4"
+       style="fill:#4cae4e;fill-opacity:1;stroke:#4cae4e;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1143)" />
+    <path
+       transform="matrix(0,1,-0.49185497,0,111.94386,263.19458)"
+       d="m 33.539841,205.32895 -6.033394,3.48338 v -6.96676 z"
+       id="path4581-2-4-1"
+       style="fill:#00838f;fill-opacity:1;stroke:#00838f;stroke-width:0.26458332;stroke-opacity:1;filter:url(#filter1147)" />
+  </g>
+</svg>
