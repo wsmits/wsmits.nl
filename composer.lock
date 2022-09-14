@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "beed3a3fbe22bd1a0b30af9b6ad3289f",
+    "content-hash": "32e2bb705c70cb8f4017bb4e271f1542",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5781,20 +5781,20 @@
     "packages-dev": [
         {
             "name": "deployer/deployer",
-            "version": "v7.0.0-rc.8",
+            "version": "v7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/deployphp/deployer.git",
-                "reference": "629973ee3d0ce78953b18500cba0695feec28c2b"
+                "reference": "99a57a9035cfe0eeae5dba5befe5411ac0f3ac72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deployphp/deployer/zipball/629973ee3d0ce78953b18500cba0695feec28c2b",
-                "reference": "629973ee3d0ce78953b18500cba0695feec28c2b",
+                "url": "https://api.github.com/repos/deployphp/deployer/zipball/99a57a9035cfe0eeae5dba5befe5411ac0f3ac72",
+                "reference": "99a57a9035cfe0eeae5dba5befe5411ac0f3ac72",
                 "shasum": ""
             },
             "bin": [
-                "deployer.phar"
+                "dep"
             ],
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -5820,7 +5820,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-22T14:33:06+00:00"
+            "time": "2022-09-10T07:44:30+00:00"
         },
         {
             "name": "doctrine/instantiator",

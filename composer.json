@@ -15,7 +15,7 @@
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
-        "deployer/deployer": "v7.0.0-rc.8",
+        "deployer/deployer": "^7.0",
         "fakerphp/faker": "^1.9.1",
         "laravel-lang/lang": "11.0",
         "laravel/sail": "^1.0.1",
