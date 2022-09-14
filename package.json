@@ -23,6 +23,8 @@
     },
     "dependencies": {
         "boxicons": "^2.1.2",
+        "canvas-confetti": "^1.5.1",
+        "dayjs": "^1.11.4",
         "highlight.js": "^11.5.1",
         "vue3-smooth-scroll": "^0.8.1"
     }

@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import NotificationBar from '@/Components/NotificationBar.vue'
 
 defineProps({
     canLogin: Boolean,
@@ -8,11 +9,16 @@ defineProps({
     profileUrls: Array
 });
 
+
+function confetti(){
+    console.log('poef');
+    window.fireConfetti();
+}
+
 </script>
 
 <template>
     <Head title="Welcome"/>
-
 <!--    <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0">-->
 <!--        <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">-->
 <!--            <Link v-if="$page.props.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">-->
@@ -36,6 +42,7 @@ defineProps({
     <div id="main" class="relative">
         <div>
             <div class="w-full z-50 top-0 py-3 sm:py-5  absolute">
+                <NotificationBar :showBar="true" use></NotificationBar>
                 <div class="container flex items-center justify-between">
                     <div><a href="/"><img src="assets/img/logoGrey.svg" class="w-16 lg:w-28" alt="logo image"/></a></div>
                     <div class="hidden lg:block">
@@ -46,7 +53,7 @@ defineProps({
                             </li>
 
                             <li class="group pl-6">
-                                <a href="#services" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</a>
+                                <a href="#skills" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
@@ -56,7 +63,7 @@ defineProps({
                             </li>
 
                             <li class="group pl-6">
-                                <a href="#clients" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</a>
+                                <a href="#keywords" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Keywords</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
@@ -230,12 +237,12 @@ defineProps({
                 </div>
             </div>
 
-            <div class="container py-16 md:py-20" id="services">
+            <div class="container py-16 md:py-20" id="skills">
                 <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     Here's what I'm good at
                 </h2>
                 <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                    These are the services Ioffer
+                    These are the skills I know best
                 </h3>
 
                 <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
@@ -253,7 +260,25 @@ defineProps({
                                 WEB DEVELOPMENT
                             </h3>
                             <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Build simple and complex web applications to manage the things needed online
+                            </p>
+                        </div>
+                    </div>
+                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                            <div class="hidden group-hover:block">
+                                <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
+                            </div>
+                            <div class="block group-hover:hidden">
+                                <img src="/assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                                Software Architecture
+                            </h3>
+                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                                Design the system in a way that it is organised and stays maintainable in the future
                             </p>
                         </div>
                     </div>
@@ -271,82 +296,64 @@ defineProps({
                                 Technical Writing
                             </h3>
                             <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Write the documents needed for software maintainers to quickly be able to work on an existing project
                             </p>
                         </div>
                     </div>
-                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                            <div class="hidden group-hover:block">
-                                <img src="/assets/img/icon-mobile-white.svg" alt="Mobile Application icon" />
-                            </div>
-                            <div class="block group-hover:hidden">
-                                <img src="/assets/img/icon-mobile-black.svg" alt="Mobile Application icon" />
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                                Mobile Development
-                            </h3>
-                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                            <div class="hidden group-hover:block">
-                                <img src="/assets/img/icon-email-white.svg" alt="Email Marketing icon" />
-                            </div>
-                            <div class="block group-hover:hidden">
-                                <img src="/assets/img/icon-email-black.svg" alt="Email Marketing icon" />
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                                Email Development
-                            </h3>
-                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                            <div class="hidden group-hover:block">
-                                <img src="/assets/img/icon-design-white.svg" alt="Theme Design icon" />
-                            </div>
-                            <div class="block group-hover:hidden">
-                                <img src="/assets/img/icon-design-black.svg" alt="Theme Design icon" />
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                                Graphic Design
-                            </h3>
-                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                            <div class="hidden group-hover:block">
-                                <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
-                            </div>
-                            <div class="block group-hover:hidden">
-                                <img src="/assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                                Web Design
-                            </h3>
-                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                    </div>
+<!--                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">-->
+<!--                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">-->
+<!--                            <div class="hidden group-hover:block">-->
+<!--                                <img src="/assets/img/icon-email-white.svg" alt="Email Marketing icon" />-->
+<!--                            </div>-->
+<!--                            <div class="block group-hover:hidden">-->
+<!--                                <img src="/assets/img/icon-email-black.svg" alt="Email Marketing icon" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="text-center">-->
+<!--                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">-->
+<!--                                Email Development-->
+<!--                            </h3>-->
+<!--                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">-->
+<!--                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">-->
+<!--                            <div class="hidden group-hover:block">-->
+<!--                                <img src="/assets/img/icon-design-white.svg" alt="Theme Design icon" />-->
+<!--                            </div>-->
+<!--                            <div class="block group-hover:hidden">-->
+<!--                                <img src="/assets/img/icon-design-black.svg" alt="Theme Design icon" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="text-center">-->
+<!--                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">-->
+<!--                                Graphic Design-->
+<!--                            </h3>-->
+<!--                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="group rounded px-8 py-12 shadow hover:bg-primary">-->
+<!--                        <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">-->
+<!--                            <div class="hidden group-hover:block">-->
+<!--                                <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />-->
+<!--                            </div>-->
+<!--                            <div class="block group-hover:hidden">-->
+<!--                                <img src="/assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="text-center">-->
+<!--                            <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">-->
+<!--                                Web Design-->
+<!--                            </h3>-->
+<!--                            <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
 
@@ -355,50 +362,48 @@ defineProps({
                     Check out my Portfolio
                 </h2>
                 <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                    Here's what I have done with the past
+                    Here are some projects I'm working on and where I've worked on in the past
                 </h3>
 
                 <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
-                    <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+                    <a href="https://www.tfe.agency/" class="mx-auto transform transition-all hover:scale-105 md:mx-0 text-center" target="_blank">
                         <img src="/assets/img/portfolio-apple.jpeg" class="w-full shadow" alt="portfolio image" />
+                        <span class="text-2xl">TFE DATAHUB</span>
                     </a>
-                    <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+                    <a href="https://meshlink.nl/" class="mx-auto transform transition-all hover:scale-105 md:mx-0 text-center" target="_blank">
                         <img src="/assets/img/portfolio-stripe.jpeg" class="w-full shadow" alt="portfolio image" />
+                        <span class="text-2xl">MESHLINK</span>
                     </a>
-                    <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+                    <a href="https://onthatass.com/" class="mx-auto transform transition-all hover:scale-105 md:mx-0 text-center" target="_blank">
                         <img src="/assets/img/portfolio-fedex.jpeg" class="w-full shadow" alt="portfolio image" />
+                        <span class="text-2xl">ON THAT ASS</span>
                     </a>
-                    <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+                    <a href="https://www.group-office.com/" class="mx-auto transform transition-all hover:scale-105 md:mx-0 text-center" target="_blank">
                         <img src="/assets/img/portfolio-microsoft.jpeg" class="w-full shadow" alt="portfolio image" />
+                        <span class="text-2xl">GROUP-OFFICE</span>
                     </a>
                 </div>
             </div>
 
-            <div class="bg-grey-50" id="clients">
+            <div class="bg-grey-50" id="keywords">
                 <div class="container py-16 md:py-20">
                     <div class="mx-auto w-full sm:w-3/4 lg:w-full">
                         <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-                            My latest clients
+                            Words that describe me
                         </h2>
                         <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
-                <span class="m-8 block">
-                  <img src="/assets/img/logo-coca-cola.svg" alt="client logo" class="mx-auto block h-12 w-auto" />
-                </span>
                             <span class="m-8 block">
-                  <img src="/assets/img/logo-apple.svg" alt="client logo" class="mx-auto block h-12 w-auto" />
-                </span>
-
+                                <span class="mx-auto block h-12 w-auto text-3xl text-gray-400 font-bold">AANPAKKER</span>
+                            </span>
                             <span class="m-8 block">
-                  <img src="/assets/img/logo-netflix.svg" alt="client logo" class="mx-auto block h-12 w-auto" />
-                </span>
-
+                                <span class="mx-auto block h-12 w-auto text-3xl text-gray-400 font-bold">TEAM PLAYER</span>
+                            </span>
                             <span class="m-8 block">
-                  <img src="/assets/img/logo-amazon.svg" alt="client logo" class="mx-auto block h-12 w-auto" />
-                </span>
-
+                                <span class="mx-auto block h-12 w-auto text-3xl text-gray-400 font-bold">THINKER</span>
+                            </span>
                             <span class="m-8 block">
-                  <img src="/assets/img/logo-stripe.svg" alt="client logo" class="mx-auto block h-12 w-auto" />
-                </span>
+                                <span class="mx-auto block h-12 w-auto text-3xl text-gray-400 font-bold">LOYAL</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -739,6 +744,7 @@ defineProps({
         <div class="bg-primary">
             <div class="container flex flex-col justify-between py-6 sm:flex-row">
                 <p class="text-center font-body text-white md:text-left">© Copyright 2022</p>
+                <p><i @click="confetti" class="bx bx-gift cursor-pointer text-2xl text-white hover:text-yellow"></i></p>
                 <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
                     <a :href="profileUrls.github" class="pl-4"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
                     <a :href="profileUrls.twitter" class="pl-4"><i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i></a>
