@@ -52,6 +52,12 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
+                                <JetNavLink :href="route('contacts')" :active="route().current('contacts')">
+                                    Contacts
+                                </JetNavLink>
+                                <JetNavLink :href="route('email')" :active="route().current('email')">
+                                    Email
+                                </JetNavLink>
                             </div>
                         </div>
 
@@ -156,7 +162,11 @@ const logout = () => {
                                         </div>
 
                                         <JetDropdownLink :href="route('profile.show')">
-                                            Profile
+                                            <i class="bx bx-user"></i> Profile
+                                        </JetDropdownLink>
+
+                                        <JetDropdownLink :href="route('settings')">
+                                            <i class="bx bx-cog"></i> Settings
                                         </JetDropdownLink>
 
                                         <JetDropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">
@@ -168,7 +178,7 @@ const logout = () => {
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <JetDropdownLink as="button">
-                                                Log Out
+                                                <i class="bx bx-exit"></i> Log Out
                                             </JetDropdownLink>
                                         </form>
                                     </template>
@@ -210,6 +220,12 @@ const logout = () => {
                     <div class="pt-2 pb-3 space-y-1">
                         <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink :href="route('contacts')" :active="route().current('contacts')">
+                            Contacts
+                        </JetResponsiveNavLink>
+                        <JetResponsiveNavLink :href="route('email')" :active="route().current('email')">
+                            Email
                         </JetResponsiveNavLink>
                     </div>
 
