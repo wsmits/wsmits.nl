@@ -27,6 +27,8 @@
         "cssnano": "^5.1.13",
         "dayjs": "^1.11.4",
         "highlight.js": "^11.5.1",
+        "laravel-echo": "^1.14.0",
+        "pusher-js": "^7.4.0",
         "vue3-smooth-scroll": "^0.8.1"
     }
 }
