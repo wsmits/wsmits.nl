@@ -141,8 +141,9 @@ function renderMenu() {
             </div>
 
             <div>
-                <div :class="renderMenu() ? '' : 'h-screen'" class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(assets/img/bg-hero.jpg)">
-                    <video :class="renderMenu() ? 'w-full max-h-full' : 'h-full'" class="absolute top-0 right-0 inset-0 z-20  object-cover" id="video" preload="" autoplay="" muted="" playsinline="" loop="">
+                <div :class="renderMenu() ? '' : 'h-screen'" class="relative bg-cover bg-center bg-no-repeat py-8" style="background-color: #01082f;">
+<!--                <div :class="renderMenu() ? '' : 'h-screen'" class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(assets/img/bg-hero.jpg)">-->
+                    <video :class="renderMenu() ? 'w-full max-h-full' : 'h-full'" class="absolute top-0 right-0 z-20 object-cover" id="video" preload="" autoplay="" muted="" playsinline="" loop="">
                         <source :src="videoUrl" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
