@@ -13,8 +13,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                header: ["Raleway", "sans-serif"],
-                body: ["Open Sans", "sans-serif"],
+                header: ["Poppins", "sans-serif"],
+                body: ["Poppins", "sans-serif"],
             },
             screens: {
                 xs: "375px",
@@ -23,7 +23,7 @@ module.exports = {
 
             colors: {
                 transparent: "transparent",
-                primary: "#f68c1e",
+                primary: "#07429d",
                 secondary: "#252426",
                 white: "#ffffff",
                 black: "#000000",
@@ -38,8 +38,8 @@ module.exports = {
                 "grey-50": "#f4f3f8",
                 "grey-60": "#edebf6",
                 "grey-70": "#d8d8d8",
-                "hero-gradient-from": "rgba(249,165,40,0.95)",
-                "hero-gradient-to": "rgba(237,109,35,0.93)",
+                "hero-gradient-from": "rgb(9,70,162)",
+                "hero-gradient-to": "rgba(32,2,141,0.75)",
                 "blog-gradient-from": "#8f9098",
                 "blog-gradient-to": "#222222",
             },

@@ -2,17 +2,28 @@
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import NotificationBar from '@/Components/NotificationBar.vue'
 
-defineProps({
+const props = defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
     mobileMenu: Boolean,
-    profileUrls: Array
+    profileUrls: Object,
+    videoUrl: String,
+    pageBlocks: Array,
+    showFooter: Boolean,
+    showNotificationBar: Boolean,
 });
-
 
 function confetti(){
     console.log('poef');
     window.fireConfetti();
+}
+
+function showPageBlock(name) {
+   return props.pageBlocks.includes(name);
+}
+
+function renderMenu() {
+    return props.pageBlocks.length > 0;
 }
 
 </script>
@@ -41,48 +52,48 @@ function confetti(){
 
     <div id="main" class="relative">
         <div>
-            <div class="w-full z-50 top-0 py-3 sm:py-5  absolute">
-                <NotificationBar :showBar="true" use></NotificationBar>
+            <div class="w-full z-50 top-0 py-3 sm:py-5 absolute">
+                <NotificationBar  v-if="showNotificationBar" :showBar="true" use></NotificationBar>
                 <div class="container flex items-center justify-between">
                     <div><a href="/"><img src="assets/img/logoGrey.svg" class="w-16 lg:w-28" alt="logo image"/></a></div>
                     <div class="hidden lg:block">
-                        <ul class="flex items-center">
-                            <li class="group pl-6">
+                        <ul v-if="renderMenu()" class="flex items-center">
+                            <li v-if="showPageBlock('about')" class="group pl-6">
                                 <a href="#about" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('skills')" class="group pl-6">
                                 <a href="#skills" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('portfolio')" class="group pl-6">
                                 <a href="#portfolio" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('keywords')" class="group pl-6">
                                 <a href="#keywords" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Keywords</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('work')" class="group pl-6">
                                 <a href="#work" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('statistics')" class="group pl-6">
                                 <a href="#statistics" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('blog')" class="group pl-6">
                                 <a href="#blog" v-smooth-scroll class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
 
-                            <li class="group pl-6">
+                            <li v-if="showPageBlock('contact')" class="group pl-6">
                                 <a href="#contact" v-smooth-scroll  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</a>
                                 <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                             </li>
@@ -94,35 +105,35 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden" :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+            <div v-if="renderMenu()" class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden" :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
                 <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
                     <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
                         <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
                     </button>
 
                     <ul class="mt-8 flex flex-col">
-                        <li class="py-2">
+                        <li v-if="showPageBlock('about')" class="py-2">
                             <a href="#about" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</a>
                         </li>
-                        <li class="py-2">
-                            <a href="#services" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</a>
+                        <li v-if="showPageBlock('skills')" class="py-2">
+                            <a href="#services" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Skills</a>
                         </li>
-                        <li class="py-2">
+                        <li v-if="showPageBlock('portfolio')" class="py-2">
                             <a href="#portfolio" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</a>
                         </li>
-                        <li class="py-2">
-                            <a href="#clients" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</a>
+                        <li v-if="showPageBlock('keywords')" class="py-2">
+                            <a href="#clients" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Keywords</a>
                         </li>
-                        <li class="py-2">
+                        <li v-if="showPageBlock('work')" class="py-2">
                             <a href="#work" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</a>
                         </li>
-                        <li class="py-2">
+                        <li v-if="showPageBlock('statistics')" class="py-2">
                             <a href="#statistics" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</a>
                         </li>
-                        <li class="py-2">
+                        <li v-if="showPageBlock('blog')" class="py-2">
                             <a href="#blog" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</a>
                         </li>
-                        <li class="py-2">
+                        <li v-if="showPageBlock('contact')" class="py-2">
                             <a href="#contact" v-smooth-scroll @click="mobileMenu = false" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</a>
                         </li>
                     </ul>
@@ -130,7 +141,10 @@ function confetti(){
             </div>
 
             <div>
-                <div class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(assets/img/bg-hero.jpg)">
+                <div :class="renderMenu() ? '' : 'h-screen'" class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(assets/img/bg-hero.jpg)">
+                    <video :class="renderMenu() ? 'w-full max-h-full' : 'h-full'" class="absolute top-0 right-0 inset-0 z-20  object-cover" id="video" preload="" autoplay="" muted="" playsinline="" loop="">
+                        <source :src="videoUrl" type="video/mp4">
+                    </video>
                     <div class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
                     <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
                         <div class="flex flex-col items-center justify-center lg:flex-row">
@@ -143,9 +157,9 @@ function confetti(){
                                         <div class="hidden sm:block"><i class="bx bx-chevron-right text-3xl text-yellow"></i></div>
                                     </div>
                                     <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                                        <a :href="profileUrls.github" class="pl-4"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
-                                        <a :href="profileUrls.twitter" class="pl-4"><i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i></a>
-                                        <a :href="profileUrls.linkedIn" class="pl-4"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i></a>
+                                        <a :href="profileUrls.github" class="pl-4" target="_blank"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
+                                        <a :href="profileUrls.twitter" class="pl-4" target="_blank"><i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i></a>
+                                        <a :href="profileUrls.linkedIn" class="pl-4" target="_blank"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -155,10 +169,7 @@ function confetti(){
             </div>
 
 
-
-
-
-            <div class="bg-grey-50" id="about">
+            <div v-if="showPageBlock('about')" class="bg-grey-50" id="about">
                 <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
                     <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
                         <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -237,7 +248,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="container py-16 md:py-20" id="skills">
+            <div v-if="showPageBlock('skills')" class="container py-16 md:py-20" id="skills">
                 <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     Here's what I'm good at
                 </h2>
@@ -357,7 +368,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="container py-16 md:py-20" id="portfolio">
+            <div v-if="showPageBlock('portfolio')" class="container py-16 md:py-20" id="portfolio">
                 <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     Check out my Portfolio
                 </h2>
@@ -385,7 +396,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="bg-grey-50" id="keywords">
+            <div v-if="showPageBlock('keywords')" class="bg-grey-50" id="keywords">
                 <div class="container py-16 md:py-20">
                     <div class="mx-auto w-full sm:w-3/4 lg:w-full">
                         <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -409,7 +420,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="container py-16 md:py-20" id="work">
+            <div v-if="showPageBlock('work')" class="container py-16 md:py-20" id="work">
                 <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     My work experience
                 </h2>
@@ -516,8 +527,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
-                 style="background-image: url(/assets/img/experience-figure.png)" id="statistics">
+            <div v-if="showPageBlock('statistics')" class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24" style="background-image: url(/assets/img/experience-figure.png)" id="statistics">
                 <div class="container">
                     <div class="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
                         <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
@@ -586,7 +596,7 @@ function confetti(){
 
 
 
-            <div class="bg-grey-50" id="blog">
+            <div v-if="showPageBlock('blog')" class="bg-grey-50" id="blog">
                 <div class="container py-16 md:py-20">
                     <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                         I also like to write
@@ -648,7 +658,7 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="container py-16 md:py-20" id="contact">
+            <div v-if="showPageBlock('contact')" class="container py-16 md:py-20" id="contact">
                 <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     Here's a contact form
                 </h2>
@@ -718,10 +728,10 @@ function confetti(){
                 </div>
             </div>
 
-            <div class="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
+            <div v-if="showPageBlock('map')"  class="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
                  style="background-image: url(/assets/img/map.png)"></div>
 
-            <div class="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
+            <div v-if="showPageBlock('email')" class="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
                  style="background-image: url(/assets/img/bg-cta.jpg)">
                 <div class="container relative z-30">
                     <h3
@@ -741,14 +751,14 @@ function confetti(){
             </div>
         </div>
 
-        <div class="bg-primary">
+        <div v-if="showFooter" :class="renderMenu() ? '' : 'fixed bottom-0 w-full z-30'" class="bg-primary">
             <div class="container flex flex-col justify-between py-6 sm:flex-row">
                 <p class="text-center font-body text-white md:text-left">© Copyright 2022</p>
                 <p><i @click="confetti" class="bx bx-gift cursor-pointer text-2xl text-white hover:text-yellow"></i></p>
                 <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                    <a :href="profileUrls.github" class="pl-4"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
-                    <a :href="profileUrls.twitter" class="pl-4"><i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i></a>
-                    <a :href="profileUrls.linkedIn" class="pl-4"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i></a>
+                    <a :href="profileUrls.github" class="pl-4" target="_blank"><i class="bx bxl-github text-2xl text-white hover:text-yellow"></i></a>
+                    <a :href="profileUrls.twitter" class="pl-4" target="_blank"><i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i></a>
+                    <a :href="profileUrls.linkedIn" class="pl-4" target="_blank"><i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i></a>
                 </div>
             </div>
         </div>
