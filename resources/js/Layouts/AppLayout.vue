@@ -131,6 +131,34 @@ const logout = () => {
                                 </JetDropdown>
                             </div>
 
+                            <!-- Notifications Dropdown -->
+                            <div class="ml-3 relative">
+                                <JetDropdown align="right" width="w-80">
+                                    <template #trigger>
+                                        <button class="flex justify-center items-center text-sm border-2 border-transparent h-8 w-8 rounded-full focus:outline-none focus:border-gray-300 transition bg-gray-300">
+                                            <div class="text-center">
+                                                <i class='bx bxs-bell-ring'></i>
+                                            </div>
+                                        </button>
+                                    </template>
+
+                                    <template #content>
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            Notifications
+                                        </div>
+                                        <div class="border-t border-gray-100" />
+                                        <div v-for="notification in $page.props.notifications">
+                                            <div v-if="notification.type == 'App\\Notifications\\SuccessfulLogin'" class="block px-4 py-2 text-xs text-gray-400 bg-green-200">
+This is the message
+
+                                            </div>
+                                        </div>
+
+
+                                    </template>
+                                </JetDropdown>
+                            </div>
+
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <JetDropdown align="right" width="48">

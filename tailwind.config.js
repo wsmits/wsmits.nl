@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
                 white: "#ffffff",
                 black: "#000000",
                 yellow: "#f9e71c",
-                green: "#aeb335",
+                // green: "#aeb335",
                 "dark-green": "#797843",
                 lila: "#e6e5ec",
                 "grey-10": "#6c6b6d",
@@ -42,6 +43,8 @@ module.exports = {
                 "hero-gradient-to": "rgba(32,2,141,0.75)",
                 "blog-gradient-from": "#8f9098",
                 "blog-gradient-to": "#222222",
+                green: colors.green,
+                emerald: colors.emerald,
             },
 
             container: {
