@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Miriam Cooijmans',
             'email' => 'miriam@wsmits.nl',
         ]);
+
+        $this->call([AddressbookSeeder::class]);
     }
 }
