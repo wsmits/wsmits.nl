@@ -1,9 +1,6 @@
 name: Deploy to Production
 
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
@@ -28,7 +25,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Composer dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
       - name: Install NPM dependencies
         run: npm ci
