@@ -5,11 +5,9 @@ require_once 'recipe/common.php';
 
 host('wsmits.nl')
     ->set('stage', 'production')
-    ->set('deploy_path', '/home/u133344p128218/wsmits.nl');
-//    ->stage('production')
-//    ->user('u133344p128218')
-//    ->port(7685)
-//    ->set('deploy_path', '/home/u133344p128218/wsmits.nl2');
+    ->set('deploy_path', '/home/u133344p128218/wsmits.nl')
+    ->user('u133344p128218')
+    ->port(7685);
 
 set('application', 'wsmits.nl');
 //set('repository', 'git@github.com:wsmits/wsmits.nl.git');

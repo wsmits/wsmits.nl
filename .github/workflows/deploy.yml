@@ -41,10 +41,8 @@ jobs:
       - name: Add SSH known hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p 7685 -H wsmits.nl >> ~/.ssh/known_hosts
 
       - name: Deploy with Deployer
-        env:
-          DOT_ENV: ${{ secrets.DOT_ENV }}
         run: |
-          vendor/bin/dep deploy production --ssh="host=${{ secrets.SSH_HOST }},user=${{ secrets.SSH_USER }},port=${{ secrets.SSH_PORT }}"
+          vendor/bin/dep deploy wsmits.nl
