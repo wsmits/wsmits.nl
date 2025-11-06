@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DemoController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\WelcomeController;
@@ -19,6 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WelcomeController::class, 'index']);
+
+Route::controller(DemoController::class)->prefix('demo')->group(function () {
+    Route::get('/worldmap', 'worldmap')->name('worldmap');
+    Route::get('/europemap', 'europemap')->name('europemap');
+});
+
+Route::get('demo/', [WelcomeController::class, 'index']);
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
     ->group(function () {
