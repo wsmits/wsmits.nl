@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transition = 'transform 0.15s ease';
             el.style.transformOrigin = 'center';
             el.style.transform = `scale(${scale})`;
-            el.style.fillOpacity = active ? 0.8 : 1;
+            el.style.fillOpacity = active ? 0.9 : 1;
 
             if (active) bringToFront(el); // alleen bij hover
         });

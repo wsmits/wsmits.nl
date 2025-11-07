@@ -7,6 +7,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.js',
+                'resources/js/demo/europemap.js',
+                'resources/js/demo/worldmap.js',
             ],
         }),
         vue({
