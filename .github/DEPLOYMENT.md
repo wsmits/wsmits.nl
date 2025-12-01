@@ -20,10 +20,10 @@ You need to configure the following secrets in your GitHub repository:
 - **SSH_HOST**: `wsmits.nl`
   - Your server hostname
 
-- **SSH_USER**: `u133344p128218`
+- **SSH_USER**: `zw126918`
   - Your SSH username on the server
 
-- **SSH_PORT**: `22` (or `7685` if using custom port)
+- **SSH_PORT**: `22` (or `26` if using custom port)
   - The SSH port to connect to
 
 - **DOT_ENV** (optional): Your production `.env` file contents
@@ -70,7 +70,7 @@ You can also trigger deployment manually:
 ### Deployment Failures
 - Check the Actions logs in GitHub for detailed error messages
 - Verify your server has enough disk space
-- Ensure the deploy path `/home/u133344p128218/wsmits.nl` exists and is writable
+- Ensure the deploy path `/home/zw126918/wsmits.nl` exists and is writable
 
 ### Build Failures
 - Ensure all dependencies are correctly specified in composer.json
