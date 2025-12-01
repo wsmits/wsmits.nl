@@ -41,7 +41,7 @@ jobs:
       - name: Add SSH known hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p 7685 -H wsmits.nl >> ~/.ssh/known_hosts
+          ssh-keyscan -p 26 -H wsmits.nl >> ~/.ssh/known_hosts
 
       - name: Deploy with Deployer
         run: |
