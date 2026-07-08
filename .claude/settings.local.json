@@ -1,7 +1,36 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "WebSearch",
+      "Bash(curl -s https://repo.packagist.org/p2/spatie/laravel-ignition.json)",
+      "Bash(curl -s https://repo.packagist.org/p2/laravel-lang/lang.json)",
+      "Bash(curl -s https://repo.packagist.org/p2/inertiajs/inertia-laravel.json)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s https://repo.packagist.org/p2/inertiajs/inertia-laravel.json -o /tmp/inertia.json)",
+      "Bash(node -e ' *)",
+      "PowerShell(composer update *)",
+      "PowerShell(php artisan about 2>&1 | Select-Object -First 40)",
+      "PowerShell(php artisan route:list 2>&1 | Select-Object -First 30)",
+      "PowerShell(Get-Content *)",
+      "Bash(curl -s \"https://registry.npmjs.org/@inertiajs/vue3\")",
+      "Bash(curl -s \"https://registry.npmjs.org/@inertiajs/vue3\" -o /tmp/inertiavue3.json)",
+      "Read(//tmp/**)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s https://api.github.com/repos/inertiajs/inertia-laravel/releases/tags/v3.0.0)",
+      "Bash(curl -s https://registry.npmjs.org/laravel-vite-plugin/3.1.0)",
+      "PowerShell(npm *)",
+      "Bash(curl -s https://registry.npmjs.org/@vitejs/plugin-vue/6.0.7)",
+      "PowerShell(php artisan test 2>&1 | Select-Object -Last 100)",
+      "PowerShell(vendor/bin/phpunit --migrate-configuration 2>&1)",
+      "Skill(run)",
+      "Bash(npm ls *)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(node \"C:\\\\Users\\\\Wesley\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Wesley-Herd-wsmits\\\\ba3b0fe8-72f7-4fda-a30f-5c54fb25e5d7\\\\scratchpad\\\\verify.js\")",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node verify.js)"
     ],
     "deny": [],
     "ask": []

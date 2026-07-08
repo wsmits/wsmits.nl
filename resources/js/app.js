@@ -4,10 +4,9 @@ import 'boxicons/css/boxicons.min.css';
 import 'highlight.js/styles/default.css';
 
 import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
-import { InertiaProgress } from '@inertiajs/progress';
+import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import VueSmoothScroll from 'vue3-smooth-scroll';
 import confetti from "canvas-confetti"
 
@@ -22,8 +21,8 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, app, props, plugin }) {
-        const VueApp = createApp({ render: () => h(app, props) });
+    setup({ el, App, props, plugin }) {
+        const VueApp = createApp({ render: () => h(App, props) });
 
         VueApp.config.globalProperties.$date = dayjs;
 
@@ -32,9 +31,10 @@ createInertiaApp({
             .use(VueSmoothScroll)
             .mount(el);
     },
+    progress: {
+        color: '#4B5563',
+    },
 });
-
-InertiaProgress.init({ color: '#4B5563' });
 
 const fireConfetti = (amount = 300) => {
     confetti({
