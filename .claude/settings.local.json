@@ -30,7 +30,10 @@
       "Bash(node \"C:\\\\Users\\\\Wesley\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Wesley-Herd-wsmits\\\\ba3b0fe8-72f7-4fda-a30f-5c54fb25e5d7\\\\scratchpad\\\\verify.js\")",
       "Bash(npm init *)",
       "Bash(npm install *)",
-      "Bash(node verify.js)"
+      "Bash(node verify.js)",
+      "Bash(npm -v)",
+      "Bash(cp package-lock.json package-lock.json.bak)",
+      "Bash(rm package-lock.json)"
     ],
     "deny": [],
     "ask": []

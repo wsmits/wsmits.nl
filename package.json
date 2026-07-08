@@ -28,5 +28,9 @@
         "laravel-echo": "^1.14.0",
         "pusher-js": "^7.4.0",
         "vue3-smooth-scroll": "^0.8.1"
+    },
+    "overrides": {
+        "@emnapi/core": "1.11.1",
+        "@emnapi/runtime": "1.11.1"
     }
 }
