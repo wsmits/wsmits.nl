@@ -23,19 +23,176 @@
                 size: A4;
             }
 
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             body {
                 background: white;
                 padding: 0;
+                font-size: 0.78rem;
+                line-height: 1.5;
             }
 
             .no-print {
-                display:none;
+                display: none;
             }
 
             .page {
-                box-shadow:none;
-                border-radius:0;
-                margin:0;
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            /* Header */
+            .page > div:first-child {
+                padding: 1.5rem 1.75rem !important;
+            }
+
+            .page > div:first-child .flex.items-center {
+                gap: 1.25rem !important;
+            }
+
+            .page > div:first-child img {
+                width: 5rem !important;
+                height: 5rem !important;
+            }
+
+            .page > div:first-child h1 {
+                font-size: 1.6rem !important;
+            }
+
+            .page > div:first-child p.text-xl {
+                font-size: 0.85rem !important;
+                margin-top: 0.2rem !important;
+            }
+
+            .page > div:first-child p.mt-5 {
+                margin-top: 0.4rem !important;
+                font-size: 0.75rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .page > div:first-child .flex.flex-wrap.gap-6 {
+                margin-top: 0.5rem !important;
+                gap: 0.9rem !important;
+                font-size: 0.72rem !important;
+            }
+
+            /* Sidebar & main padding */
+            aside {
+                padding: 1.5rem !important;
+            }
+
+            main {
+                padding: 1.5rem !important;
+            }
+
+            /* Sidebar sections */
+            aside section {
+                margin-top: 1rem !important;
+            }
+
+            aside section:first-child {
+                margin-top: 0 !important;
+            }
+
+            aside h2 {
+                margin-bottom: 0.45rem !important;
+                font-size: 0.65rem !important;
+            }
+
+            /* Badges */
+            aside .flex.flex-wrap.gap-2 {
+                gap: 0.25rem !important;
+            }
+
+            aside .flex.flex-wrap.gap-2 span {
+                padding: 0.1rem 0.5rem !important;
+                font-size: 0.63rem !important;
+            }
+
+            /* Sidebar text */
+            aside ul, aside p {
+                font-size: 0.75rem !important;
+            }
+
+            aside .space-y-2 > li + li {
+                margin-top: 0.2rem !important;
+            }
+
+            aside .space-y-5 > div + div {
+                margin-top: 0.6rem !important;
+            }
+
+            /* Main content */
+            main h2 {
+                font-size: 1rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            main h3 {
+                font-size: 0.88rem !important;
+            }
+
+            main h4 {
+                font-size: 0.78rem !important;
+                margin-bottom: 0.3rem !important;
+            }
+
+            main .mb-12 {
+                margin-bottom: 1rem !important;
+            }
+
+            main p.mt-4 {
+                margin-top: 0.35rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            main .mt-5 {
+                margin-top: 0.5rem !important;
+            }
+
+            main .mt-8 {
+                margin-top: 0.6rem !important;
+            }
+
+            /* Werkzaamheden: 2 kolommen */
+            main ul.list-disc {
+                columns: 2 !important;
+                column-gap: 1rem !important;
+                font-size: 0.75rem !important;
+            }
+
+            main ul.list-disc > li {
+                break-inside: avoid !important;
+                margin-top: 0.2rem !important;
+            }
+
+            /* Project cards: 2-koloms grid */
+            main .space-y-4 {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.4rem !important;
+            }
+
+            main .space-y-4 > div {
+                margin-top: 0 !important;
+            }
+
+            main .rounded-lg.border.p-4 {
+                padding: 0.45rem 0.65rem !important;
+            }
+
+            /* Consistent font size in project cards */
+            main .rounded-lg.border .font-semibold {
+                font-size: 0.75rem !important;
+            }
+
+            main .rounded-lg.border .text-sm {
+                font-size: 0.72rem !important;
             }
         }
     </style>
