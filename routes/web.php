@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WelcomeController::class, 'index']);
+Route::get('about-me', [WelcomeController::class, 'aboutMe'])->middleware('cv.token')->name('about-me');
 
 Route::controller(DemoController::class)->prefix('demo')->group(function () {
     Route::get('/worldmap', 'worldmap')->name('worldmap');

@@ -44,4 +44,11 @@ class WelcomeController extends Controller
             'showNotificationBar' => $showNotificationBar
         ]);
     }
+
+    public function aboutMe()
+    {
+        return view('about-me');
+    }
+
+
 }

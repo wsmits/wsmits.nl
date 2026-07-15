@@ -45,6 +45,9 @@ module.exports = {
                 "blog-gradient-to": "#222222",
                 green: colors.green,
                 emerald: colors.emerald,
+                slate: colors.slate,
+                gray: colors.gray,
+                blue: colors.blue,
             },
 
             container: {
